@@ -2,6 +2,15 @@ import sqlglot
 import sqlglot.expressions as exp
 import streamlit as st
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 st.title("Column Extractor")
 
 with st.form("Column extractor form"):
@@ -25,3 +34,6 @@ with st.form("Column extractor form"):
         st.write("Extracted Columns Names",column_names)
     else:
         st.write("Insert select first")
+
+
+
